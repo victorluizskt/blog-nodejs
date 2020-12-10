@@ -1,0 +1,11 @@
+Site: npmjs.com
+
+Utilizando express: 
+npm install express
+
+Utilizando handlebars:
+npm install --save express-handlebars
+npm install body-parser --save
+
+Utilizando mongoose:
+npm install --save mongoose

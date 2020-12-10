@@ -13,7 +13,12 @@ const router = express.Router();
 
 // Rota de categorias
     router.get('/categorias', (req, res) => {
-        res.send('Página de categorias');
+        res.render('admin/categorias');
+    });
+
+// Rota para o formulário
+    router.get('/categorias/add', (req, res) => {
+        res.render('admin/addcategorias');
     });
 
 module.exports = router;

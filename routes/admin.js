@@ -3,7 +3,7 @@ const router = express.Router();
 
 // Rota principal para o painel administrativo
     router.get('/', (req, res) => {
-        res.send('Pagina principal do painel ADM');
+        res.render('admin/index')
     });
 
 // Rota para os posts

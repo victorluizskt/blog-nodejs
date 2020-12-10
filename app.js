@@ -6,7 +6,12 @@
 // const mongoose = require('mongoose');
 
 // Configurações
-
+    // Body Parser
+    app.use(bodyParser.urlencoded({extended: true}));
+    app.use(bodyParser.json);
+    // HandleBars
+    app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+    app.set('view engine', 'handlebars');
 
 // Rotas
 

@@ -9,3 +9,7 @@ npm install body-parser --save
 
 Utilizando mongoose:
 npm install --save mongoose
+
+Utilizando session
+npm instal --save express-session
+npm install --save connect-flash

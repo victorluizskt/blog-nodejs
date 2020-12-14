@@ -57,6 +57,26 @@
         });
     });
 
+    app.get('/postagem/:slug', (req,res) => {
+        const slug = req.params.slug
+        Postagem.findOne({slug}).then(postagem => {
+            if(postagem){
+            const post = {
+            titulo: postagem.titulo,
+            data: postagem.data,
+            conteudo: postagem.conteudo
+            }
+                res.render('postagem/index', post)
+            } else {
+                req.flash("error_msg", "Essa postagem nao existe")
+                res.redirect("/")
+                }
+            }).catch(err => {
+                req.flash("error_msg", "Houve um erro interno")
+                res.redirect("/")
+        });
+    });
+
     app.get('/404', (req, res) => {
         res.send('Error 404');
     });

@@ -13,7 +13,7 @@
     const usuarios = require('./routes/usuario');
     const passport = require('passport');
     require('./config/auth')(passport);
-
+    const db = require('./config/db');
 // Configurações
     // Sessão
         app.use(session({
@@ -21,7 +21,7 @@
             resave: true,
             saveUninitialized: true
         }));
-
+        app.use(express.static('public/img/node.svs')); 
         app.use(passport.initialize());
         app.use(passport.session());
 
@@ -42,7 +42,7 @@
         app.set('view engine', 'handlebars');
     // Mongoose
         mongoose.Promise = global.Promise;
-        mongoose.connect('mongodb://localhost/blogapp', {
+        mongoose.connect(db.mongoURI, {
             useNewUrlParser: true,
             useUnifiedTopology: true
         }).then(() => {
@@ -95,7 +95,7 @@
     app.use('/admin' , admin);
 
 // Outros
-    const PORT = 8081;
+    const PORT = process.env.PORT || 8081;
     app.listen(PORT, () => {
         console.log('Servidor rodando!')
     });

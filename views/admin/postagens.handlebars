@@ -1,6 +1,6 @@
 <h2>Lista de postagens</h2>
 <hr>
-<a href="/admin/postagens/add"><button type="button" class="btn btn-success">Criar nova postagem</button></a>
+<a href="/admin/postagens/add"><button type="button" class="btn btn-outline-success">Criar postagem</button></a>
 
 {{#each postagens}}
     <div class="card mt-4">
@@ -9,8 +9,8 @@
             <p>Descrição: {{descricao}}</p>
             <small>Data: {{data}}</small><br>
             <small>Categoria: {{categoria.nome}}</small><br>
-            <a href="/admin/postagens/edit/{{_id}}"><button class="btn btn-success mt-3">Editar postagem</button></a>
-            <a href="/admin/postagens/deletar/{{_id}}"><button class="btn btn-danger mt-3">Deletar postagem</button></a>
+            <a href="/admin/postagens/edit/{{_id}}"><button type="button" class="btn btn-outline-success">Editar postagem</button></a>
+            <a href="/admin/postagens/deletar/{{_id}}"><button type="button" class="btn btn-outline-danger">Deletar postagem</button></a>
         </div>
     </div>
 {{else}}

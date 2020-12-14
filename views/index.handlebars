@@ -4,7 +4,7 @@
   <hr class="my-4">
   <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
   <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Crie uma conta</a>
+    <button type="button" class="btn btn-outline-primary">Crie uma conta</button>
   </p>
 </div>
 
@@ -12,15 +12,16 @@
 <h2>Postagens recentes</h2>
 
 {{#each postagens}}
-<div class="card mt-4">
-    <div class="card-body">
-        <h3>{{titulo}}</h3>
-        <p>{{descricao}}</p>
-        <a href="/postagem/{{slug}}"><button class="btn btn-success">Leia mais</button></a>
+<div class="card">
+  <div class="card-header">
+    <h5>Categoria: {{categoria.nome}}</h5>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{titulo}}</h5>
+    <p class="card-text">{{descricao}}</p>
+    <a href="/postagem/{{slug}}"><button type="button" class="btn btn-outline-success">Leia mais</button></a>
         <hr>
-        <small>Categoria: {{categoria.nome}}</small>
-        <small>Data de publicação: {{data}}</small>
-    </div>
+  </div>
 </div>
 {{else}}
     <h5>Nenhuma postagem.</h5>

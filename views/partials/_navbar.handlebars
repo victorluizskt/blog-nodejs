@@ -13,11 +13,20 @@
           <a class="nav-link" href="/admin/categorias">Categoria</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="/admin/postagens">Postagens</a>
+        </li>
+        {{#if user}}
+         <li class="nav-item">
+          <a class="nav-link" href="/usuarios/logout" tabindex="-1" aria-disabled="true">Sair</a>
+        </li>
+        {{else}}
+        <li class="nav-item">
           <a class="nav-link" href="/usuarios/login" tabindex="-1" aria-disabled="true">Login</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/usuarios/registro" tabindex="-1" aria-disabled="true">Registro</a>
         </li>
+        {{/if}}
       </ul>
     </div>
   </div>

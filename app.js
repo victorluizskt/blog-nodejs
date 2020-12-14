@@ -10,6 +10,7 @@
     const flash = require('connect-flash');
     require('./models/Postagem');
     const Postagem = mongoose.model('postagens');
+    const usuarios = require('./routes/usuario');
 // Configurações
     // Sessão
         app.use(session({
@@ -81,6 +82,7 @@
         res.send('Error 404');
     });
 
+    app.use('/usuarios', usuarios);
     app.use('/admin' , admin);
 
 // Outros
